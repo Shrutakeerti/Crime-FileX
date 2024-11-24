@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crime Pattern Analysis</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Crime Pattern Analysis</h2>
+      <form action="/upload_pdf" method="post" enctype="multipart/form-data">
+        <label for="pdf-file">Upload PDF:</label>
+        <input
+          type="file"
+          id="pdf-file"
+          name="pdf_file"
+          accept=".pdf"
+          required
+        />
+        <button type="submit">Analyze PDF</button>
+      </form>
+    </div>
+  </body>
+</html>

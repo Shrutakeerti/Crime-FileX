@@ -1,0 +1,55 @@
+<!-- case_management.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Management</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h2>Case Management</h2>
+    <form action="{{ url_for('manage_case_route') }}" method="POST">
+      <label for="case_id">Case ID:</label>
+      <input type="text" id="case_id" name="case_id" required /><br />
+
+      <label for="case_date">Date:</label>
+      <input type="date" id="case_date" name="case_date" required /><br />
+
+      <label for="case_details">Case Details:</label>
+      <textarea
+        id="case_details"
+        name="case_details"
+        rows="4"
+        cols="50"
+        required
+      ></textarea
+      ><br />
+
+      <label for="crime_type">Type of Crime:</label>
+      <input type="text" id="crime_type" name="crime_type" required /><br />
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required /><br />
+
+      <button type="submit">Add Case</button>
+    </form>
+
+    <h2>Delete Case</h2>
+    <form action="{{ url_for('delete_case_route') }}" method="POST">
+      <label for="delete_case_id">Enter Case ID to Delete:</label>
+      <input
+        type="text"
+        id="delete_case_id"
+        name="delete_case_id"
+        required
+      /><br />
+      <button type="submit">Delete Case</button>
+    </form>
+
+    <a href="{{ url_for('home_page') }}">Back to Home</a>
+  </body>
+</html>

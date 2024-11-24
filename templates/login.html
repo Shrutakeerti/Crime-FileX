@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login</h2>
+      <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="biometric">Biometric Info:</label>
+        <input
+          type="text"
+          id="biometric"
+          name="biometric"
+          placeholder="Enter Biometric Data"
+          required
+        />
+
+        <button type="submit">Login</button>
+      </form>
+      <div id="face-detection">
+        <button onclick="detectFace()">Start Face Detection</button>
+        <p id="face-status"></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    function detectFace() {
+      document.getElementById("face-status").innerText = "Face detected!";
+    }
+  </script>
+</html>
